@@ -1,0 +1,39 @@
+<ion-view view-title="Product Detail">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/saeed_logo.jpg">
+        <p>Provided By:</p>
+        <h2>Gatson Growers</h2>
+      </div>
+
+      <div class="item item-body">
+        <div class="item">
+          <h1>{{product.title}}</h1> <h3>${{product.price}} per gram</h3>
+        </div>
+
+        <div class="item item-body center">
+          <img src="img/product/strains/{{product.image_title}}">
+        </div>
+
+        <p>{{product.description}}</p>
+
+        <div class="row">
+          <div class="col">
+            <p>Tested: <i class="icon ion-checkmark-circled"></i></p>
+          </div>
+          <div class="col">
+            <p>Indica/Sativa ({{product.indica}}/{{product.sativa}})</p>
+          </div>
+          <div class="col">
+            <p>THC Level: {{product.thc_percentage}}% </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <a class="button button-full button-balanced" href="#/app/purchase/{{product.$id}}"> Buy Now </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

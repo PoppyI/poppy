@@ -1,0 +1,9 @@
+{
+  "firebase": "pps",
+  "public": "www/",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

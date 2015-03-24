@@ -1,0 +1,30 @@
+<ion-view view-title="Purchase Order">
+  <ion-content>
+    <div class="list card">
+      <div class="item">
+        <img src="img/product/strains/{{product.image_title}}" style="float:left;width:128px;height:128px" >
+        <h1>{{product.title}}</h1>
+        <h3>{{product.price | currency}} per gram </h3>
+        <h3>{{product.price * 28.35 | currency }} per ounce</h3>
+      </div>
+
+      <div class="item item-body">
+        <div class="item">
+          <h3 style="font-size:300%; text-align:center">{{purchase_grams * product.price | currency}}</h3>
+          <p style="font-size:150%; text-align:center"> for {{purchase_grams}} grams </p>
+        </div>
+
+        <div class="item range range-positive">
+          <input type="range" ng-model="purchase_grams" min="1" max="50" value=3>
+        </div>
+
+        <p style="text-align:center"> We will not process the payment until you have received your product by opening the lock box.</p>
+      </div>
+
+      <div class="item tabs">
+        <a class="tab-item button button-outline button-balanced" href="#/app/product_detail/{{product.$id}}"> Cancel </a>
+        <a class="tab-item button button-balanced" href="#/app/purchase_confirmed/{{product.$id}}/{{purchase_grams}}"> Buy Now </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

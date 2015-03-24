@@ -1,0 +1,17 @@
+<ion-view view-title="Purchase Order">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-body">
+        <div class="item">
+          <img src="img/product/strains/{{product.image_title}}" style="width:128px;height:128px" >
+          <h1  style="font-size:200%">{{product.title}}</h1>
+          <h3>{{purchase_grams}} grams for {{purchase_grams * product.price | currency}}</h3>
+        </div>
+
+        <p style="text-align:center"> Your purchase has been ordered and the grower has been notified. Your account has been pre-authed and will be debited once the product has been placed on our delivery truck. You will be notified when the truck is headed your way.</p>
+      </div>
+        <a class="button button-full button-balanced" href="#/app/home"> Ok, Thanks </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

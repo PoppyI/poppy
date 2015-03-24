@@ -1,0 +1,15 @@
+<ion-view view-title="Browse Products">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider">
+        Everything Else:
+      </div>
+      <ion-item class="item-thumbnail-left" ng-repeat="product in products" href="#/app/product_detail/{{product.$id}}">
+        <img src="img/product/strains/{{product.image_title}}">
+        <h2>{{product.title}}</h2> <h3>${{product.price}} per gram</h3>
+        <p>Indica/Sativa ({{product.indica}}/{{product.sativa}})</p>
+        <p>THC Level: {{product.thc_percentage}}% </p>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

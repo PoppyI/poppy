@@ -1,0 +1,29 @@
+<ion-view view-title="Welcome To Poppy">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider">
+        Featured Product
+      </div>
+      <ion-item class="item-thumbnail-left" ng-repeat="feature in featured" href="#/app/product_detail/{{feature.$id}}">
+        <img src="img/product/strains/{{feature.image_title}}">
+        <h2>{{feature.title}}</h2>
+        <p>Provided By: Gatson Growers</p>
+        <p>Indica/Sativa ({{feature.indica}}/{{feature.sativa}})</p>
+        <p>THC Level: {{feature.thc_percentage}}% </p>
+      </ion-item>
+      <!-- Area For Suggested Items -->
+      <div class="item item-divider">
+        Suggested Items
+      </div>
+      <ion-item class="item-thumbnail-left" ng-repeat="product in products" href="#/app/product_detail/{{product.$id}}">
+        <img src="img/product/strains/{{product.image_title}}">
+        <h2>{{product.title}}</h2>
+        <p>Provided By: Gatson Growers</p>
+        <p>Indica/Sativa ({{product.indica}}/{{product.sativa}})</p>
+        <p>THC Level: {{product.thc_percentage}}% </p>
+      </ion-item>
+      <!-- Button to Browse Other Products -->
+      <a class="button button-bar button-balanced" href="#/app/browse"> Browse Product </a>
+    </div>
+  </ion-content>
+</ion-view>
