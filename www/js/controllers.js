@@ -1,6 +1,11 @@
 angular.module('starter.controllers', ['firebase.utils'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, simpleLogin, $location) {
+  //used so that user who aren't logged in are sent back to loggin page.
+  if(simpleLogin.getUID() == false) {
+    $location.path('/login');
+  }
+
   //expose logout function to scope
   $scope.logout = function() {
     simpleLogin.logout();
@@ -34,7 +39,8 @@ angular.module('starter.controllers', ['firebase.utils'])
     $scope.err = null;
     simpleLogin.login(email, pass)
       .then(function(/* user */) {
-        $location.path('/home');
+        window.location.href = '#/app/home';
+        window.location.reload();
       }, function(err) {
         $scope.err = errMessage(err);
       });

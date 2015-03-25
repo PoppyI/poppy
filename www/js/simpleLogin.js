@@ -19,6 +19,14 @@ angular.module('simpleLogin', ['firebase', 'firebase.utils'])
           return auth.$waitForAuth();
         },
 
+        getUID: function() {
+          if(auth.$getAuth() != null) {
+            return auth.$getAuth().uid;
+          } else {
+            return false;
+          }
+        },
+
         login: function(email, pass) {
           return auth.$authWithPassword({
             email: email,
@@ -28,21 +36,6 @@ angular.module('simpleLogin', ['firebase', 'firebase.utils'])
 
         logout: function() {
           auth.$unauth();
-        },
-
-        watch: function(cb, $scope) {
-          fns.getUser().then(function(user) {
-            cb(user);
-          });
-          listeners.push(cb);
-          var unbind = function() {
-            var i = listeners.indexOf(cb);
-            if( i > -1 ) { listeners.splice(i, 1); }
-          };
-          if( $scope ) {
-            $scope.$on('$destroy', unbind);
-          }
-          return unbind;
         }
       };
 
