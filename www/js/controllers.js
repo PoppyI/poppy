@@ -1,6 +1,11 @@
 angular.module('starter.controllers', ['firebase.utils'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, simpleLogin, $location) {
+  //expose logout function to scope
+  $scope.logout = function() {
+    simpleLogin.logout();
+    $location.path('/login');
+  };
 })
 
 .controller('HomeCtrl', ['$scope', 'fbutil', 'FBURL', function($scope, fbutil, FBURL) {

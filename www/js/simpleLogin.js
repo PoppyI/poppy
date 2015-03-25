@@ -26,6 +26,10 @@ angular.module('simpleLogin', ['firebase', 'firebase.utils'])
           }, {rememberMe: true});
         },
 
+        logout: function() {
+          auth.$unauth();
+        },
+
         watch: function(cb, $scope) {
           fns.getUser().then(function(user) {
             cb(user);
