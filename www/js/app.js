@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -15,6 +15,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+
+  .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html",
+      controller: "LoginCtrl"
+  })
 
   .state('app', {
     url: "/app",
@@ -72,7 +78,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   });
-  
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/login');
 });

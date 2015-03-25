@@ -19,4 +19,36 @@ angular.module('starter.controllers', ['firebase.utils'])
 .controller('PurchaseConfirmedCtrl', function($scope, $stateParams, fbutil) {
   $scope.product = fbutil.syncObject('products/' + $stateParams.productId);
   $scope.purchase_grams = $stateParams.grams;
-});
+})
+
+.controller('LoginCtrl', ['$scope', 'simpleLogin', '$location', function($scope, simpleLogin, $location) {
+  $scope.email = null;
+  $scope.pass = null;
+
+  $scope.login = function(email, pass) {
+    $scope.err = null;
+    simpleLogin.login(email, pass)
+      .then(function(/* user */) {
+        $location.path('/home');
+      }, function(err) {
+        $scope.err = errMessage(err);
+      });
+  };
+
+  function assertValidAccountProps() {
+    if( !$scope.email ) {
+      $scope.err = 'Please enter an email address';
+    }
+    else if( !$scope.pass || !$scope.confirm ) {
+      $scope.err = 'Please enter a password';
+    }
+    else if( $scope.createMode && $scope.pass !== $scope.confirm ) {
+      $scope.err = 'Passwords do not match';
+    }
+    return !$scope.err;
+  }
+
+  function errMessage(err) {
+    return angular.isObject(err) && err.code? err.code : err + '';
+  }
+}]);
