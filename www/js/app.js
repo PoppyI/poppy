@@ -70,11 +70,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
   })
 
   .state('app.purchase_confirmed', {
-    url: "/purchase_confirmed/:productId/:grams",
+    url: "/purchase_confirmed/:productId/:grams/:total",
     views: {
       'menuContent': {
         templateUrl: "templates/purchase_confirmed.html",
         controller: 'PurchaseConfirmedCtrl'
+      }
+    }
+  })
+
+  .state('app.purchase_history', {
+    url: "/purchase_history",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/purchase_history.html",
+        controller: 'PurchaseHistoryCtrl'
       }
     }
   });
