@@ -20,6 +20,7 @@ angular.module('starter.controllers', ['firebase.utils'])
 
 .controller('ProductDetailCtrl', function($scope, $stateParams, fbutil) {
   $scope.product = fbutil.syncObject('products/' + $stateParams.productId);
+  $scope.purchase_grams = 3.5;
 })
 
 .controller('ProductCtrl', ['$scope', 'fbutil', 'FBURL', function($scope, fbutil, FBURL) {
