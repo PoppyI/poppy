@@ -1,10 +1,11 @@
 <ion-view view-title="Browse Products">
   <ion-content>
     <div class="list card">
-      <div class="item item-divider">
-        Everything Else:
-      </div>
-      <ion-item class="item-thumbnail-left" ng-repeat="product in products" href="#/app/product_detail/{{product.$id}}">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="search">
+      </label>
+      <ion-item class="item-thumbnail-left" ng-repeat="product in products | filter:search" href="#/app/product_detail/{{product.$id}}">
         <img src="img/product/strains/{{product.image_title}}">
         <h2>{{product.title}}</h2> <h3>${{product.price}} per gram</h3>
         <p>Indica/Sativa ({{product.indica}}/{{product.sativa}})</p>
