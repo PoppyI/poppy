@@ -45,7 +45,7 @@ angular.module('starter.controllers', ['firebase.utils'])
 .controller('PurchaseHistoryCtrl', function($scope, fbutil, simpleLogin) {
   var uid = simpleLogin.getUID();
   console.log(uid);
-  $scope.orders = fbutil.syncObject('users/' + uid + '/orders');
+  $scope.orders = fbutil.syncArray('users/' + uid + '/orders');
 })
 
 .controller('LoginCtrl', ['$scope', 'simpleLogin', '$location', function($scope, simpleLogin, $location) {

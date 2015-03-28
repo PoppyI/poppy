@@ -1,11 +1,7 @@
 <ion-view view-title="Purchase History">
   <ion-content>
     <div class="list card">
-      <!-- <div class="item item-divider">
-        Orders Recieved:
-      </div> -->
-      <ion-item ng-repeat="order in orders" | orderBy: '-timestamp'>
-        <!-- <img src="img/product/strains/{{product.image_title}}"> -->
+      <ion-item ng-repeat="order in orders | orderBy : '-timestamp'">
         <h2>{{order.grams}} grams of {{order.title}}</h2>
         <h3>Total Cost - {{order.total_cost | currency}}</h3>
         <p>Ordered - {{order.timestamp | date: 'medium'}}</p>
