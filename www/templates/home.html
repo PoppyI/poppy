@@ -5,7 +5,7 @@
       <div class="item item-divider">
         Featured Grower:
       </div>
-      <ion-item class="item-thumbnail-left item-body" ng-repeat="feat_grower in feat_growers" href="">
+      <ion-item class="item-thumbnail-left item-body" ng-repeat="feat_grower in feat_growers" href="#/app/grower_detail/{{feat_grower.$id}}">
         <img src="img/{{feat_grower.image_title}}">
         <h2>{{feat_grower.name}}</h2>
         <p>{{feat_grower.description}}</p>
@@ -32,7 +32,6 @@
         <p>THC Level: {{product.thc_percentage}}% </p>
       </ion-item>
       <!-- Button to Browse Other Products -->
-      <!-- <p>{{f2[0].$id}}</p> -->
       <a class="button button-bar button-balanced" href="#/app/browse"> Browse Product </a>
     </div>
   </ion-content>

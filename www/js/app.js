@@ -87,6 +87,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
         controller: 'PurchaseHistoryCtrl'
       }
     }
+  })
+
+  .state('app.grower_detail', {
+    url: "/grower_detail/:growerId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/grower_detail.html",
+        controller: 'GrowerDetailCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback
