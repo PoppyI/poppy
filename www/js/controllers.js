@@ -15,7 +15,8 @@ angular.module('starter.controllers', ['firebase.utils'])
 
 .controller('HomeCtrl', ['$scope', 'fbutil', 'FBURL', function($scope, fbutil, FBURL) {
   $scope.products = fbutil.syncArray('products', {limit: 2, endAt: null});
-  $scope.featured = fbutil.syncArray('featured');
+  $scope.feat_strains = fbutil.syncArray('featured/strain');
+  $scope.feat_growers = fbutil.syncObject('featured/grower');
 }])
 
 .controller('ProductDetailCtrl', function($scope, $stateParams, fbutil) {

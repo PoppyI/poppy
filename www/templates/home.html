@@ -1,17 +1,26 @@
 <ion-view view-title="Welcome To Poppy">
   <ion-content>
     <div class="list card">
+      <!-- TODO: Add User Stories Section Here -->
       <div class="item item-divider">
-        Featured Product
+        Featured Grower:
       </div>
-      <ion-item class="item-thumbnail-left" ng-repeat="feature in featured" href="#/app/product_detail/{{feature.$id}}">
-        <img src="img/product/strains/{{feature.image_title}}">
-        <h2>{{feature.title}}</h2>
-        <p>Provided By: Gatson Growers</p>
-        <p>Indica/Sativa ({{feature.indica}}/{{feature.sativa}})</p>
-        <p>THC Level: {{feature.thc_percentage}}% </p>
+      <ion-item class="item-thumbnail-left item-body" ng-repeat="feat_grower in feat_growers" href="">
+        <img src="img/{{feat_grower.image_title}}">
+        <h2>{{feat_grower.name}}</h2>
+        <p>{{feat_grower.description}}</p>
       </ion-item>
-      <!-- Area For Suggested Items -->
+      <div class="item item-divider">
+        Featured Product:
+      </div>
+      <ion-item class="item-thumbnail-left" ng-repeat="feat_strain in feat_strains" href="#/app/product_detail/{{feat_strain.$id}}">
+        <img src="img/product/strains/{{feat_strain.image_title}}">
+        <h2>{{feat_strain.title}}</h2>
+        <p>Provided By: Gatson Growers</p>
+        <p>Indica/Sativa ({{feat_strain.indica}}/{{feat_strain.sativa}})</p>
+        <p>THC Level: {{feat_strain.thc_percentage}}% </p>
+      </ion-item>
+      <!-- TODO: Add Suggested Items Section Here -->
       <div class="item item-divider">
         Suggested Items
       </div>
@@ -23,6 +32,7 @@
         <p>THC Level: {{product.thc_percentage}}% </p>
       </ion-item>
       <!-- Button to Browse Other Products -->
+      <!-- <p>{{f2[0].$id}}</p> -->
       <a class="button button-bar button-balanced" href="#/app/browse"> Browse Product </a>
     </div>
   </ion-content>
