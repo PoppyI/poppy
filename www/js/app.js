@@ -107,8 +107,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
         controller: 'GrowerDetailCtrl'
       }
     }
+  })
+
+  .state('app.patient_profile', {
+    url: "/patient_profile",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/patient_profile.html",
+        controller: 'PatientCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/app/home');
 });

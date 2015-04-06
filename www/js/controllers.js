@@ -33,6 +33,11 @@ angular.module('starter.controllers', ['firebase.utils'])
   $scope.grower = fbutil.syncObject('growers/' + $stateParams.growerId);
 })
 
+.controller('PatientCtrl', function($scope, $stateParams, fbutil, simpleLogin) {
+  var patientId = simpleLogin.getUID();
+  $scope.patient = fbutil.syncObject('users/' + patientId);
+})
+
 .controller('PurchaseConfirmedCtrl', function($scope, $stateParams, fbutil, simpleLogin) {
   $scope.product = fbutil.syncObject('products/' + $stateParams.productId);
   $scope.purchase_grams = $stateParams.grams;
