@@ -49,6 +49,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
     }
   })
 
+  .state('app.product_breakdown', {
+    url: "/breakdown/:productId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/product_breakdown.html",
+        controller: 'ProductDetailCtrl'
+      }
+    }
+  })
+
   .state('app.product_detail', {
     url: "/product_detail/:productId",
     views: {
@@ -100,5 +110,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/home');
 });

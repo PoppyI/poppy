@@ -1,0 +1,131 @@
+<ion-view view-title="Chemical Breakdown">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider">
+        Potency Test
+      </div>
+
+      <div class="item">
+        <p>Cannabinoid Summary</p>
+
+        <div class="row">
+          <div class="col">
+            <p>Total THC</p>
+          </div>
+          <div class="col">
+            <p>Δ9THC+THCa</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.thc_total}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Total CBD</p>
+          </div>
+          <div class="col">
+            <p>CBD+CBDa</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.cbd_total}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Total CBN</p>
+          </div>
+          <div class="col">
+            <p>Total CBN</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.cbn_total}}%</p>
+          </div>
+        </div>
+
+        <p>Full Cannabinoid Profile</p>
+        <div class="row">
+          <div class="col">
+            <p>Tetrahydrocannabinol</p>
+          </div>
+          <div class="col">
+            <p>Δ9THC</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.thc}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Tetrahydrocannabinolic</p>
+          </div>
+          <div class="col">
+            <p>THCa</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.thca}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Cannabidiol</p>
+          </div>
+          <div class="col">
+            <p>CBD</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.cbd}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Cannabidiolic Acid</p>
+          </div>
+          <div class="col">
+            <p>CBDa</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.cbda}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Cannabinol</p>
+          </div>
+          <div class="col">
+            <p>CBN</p>
+          </div>
+          <div class="col">
+            <p>{{breakdown.cbn_total}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Total Active Cannabinoids:</p>
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+            <p>{{breakdown.thc_total + breakdown.cbd_total + breakdown.cbn_total}}%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item item-divider">
+        Terpene Test - Not Tested
+      </div>
+
+      <div class="item item-divider">
+        Pesticide Testing - Not Tested
+      </div>
+
+      <div class="item item-divider">
+        Microbiological Testing - Not Tested
+      </div>
+
+      <div class="item item-divider">
+        Residual Solvents Test (RST) - Not Tested
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
