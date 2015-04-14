@@ -6,14 +6,25 @@
     <div align="center" class="card list">
       <form>
         <label class="item item-input">
-            <input type="text" placeholder="Email" ng-model="email" />
+            <input type="text" placeholder="Email" ng-model="login.email" />
         </label>
         <label class="item item-input">
-            <input type="password" placeholder="Password" ng-model="pass" />
+            <input type="password" placeholder="Password" ng-model="login.pass" />
         </label>
-
-        <label class="item">
-          <button class="button button-block button-balanced" ng-click="login(email, pass)">Login</button>
+        <label class="item item-input" ng-cloak ng-show="createMode">
+            <input type="password" placeholder="Confirm Password" ng-model="login.confirm" />
+        </label>
+        <label class="item" ng-hide="createMode">
+          <button class="button button-block button-balanced" ng-click="login()">Login</button>
+        </label>
+        <label class="item" ng-hide="createMode">
+          <button class="button button-block button-balanced" ng-click="createMode = true">Register</button>
+        </label>
+        <label class="item" ng-show="createMode">
+          <button class="button button-block button-balanced" ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
+        </label>
+        <label class="item" ng-show="createMode">
+          <button class="button button-block button-balanced" ng-cloak ng-click="createMode = false">Cancel</button>
         </label>
         <p ng-show="err" class="error">{{err}}</p>
       </form>
