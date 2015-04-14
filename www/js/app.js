@@ -22,12 +22,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
       controller: "LoginCtrl"
   })
 
-  .state('login.register', {
-      url: "/register",
-      templateUrl: "templates/registration.html",
-      controller: "LoginCtrl"
-  })
-
   .state('app', {
     url: "/app",
     abstract: true,
