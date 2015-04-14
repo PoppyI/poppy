@@ -28,10 +28,17 @@ npm install
 ```
 
 Behind the scenes this will also call `bower install`.
+
 You’ll also need to install ionic’s command line utility to easily run the application.
 
 ```
 npm install -g ionic
+```
+
+To host the application on Firebase you'll need to install the Firebase command line tools.
+
+```
+npm install -g firebase-tools
 ```
 
 ### Configure the Application
