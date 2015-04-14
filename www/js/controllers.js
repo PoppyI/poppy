@@ -60,12 +60,13 @@ angular.module('starter.controllers', ['firebase.utils'])
 })
 
 .controller('LoginCtrl', ['$scope', 'simpleLogin', '$location', function($scope, simpleLogin, $location) {
-  $scope.email = null;
-  $scope.pass = null;
 
-  $scope.login = function(email, pass) {
+  $scope.login = {email: null, password: null, confirm: null};
+  $scope.createMode = false;
+
+  $scope.login = function() {
     $scope.err = null;
-    simpleLogin.login(email, pass)
+    simpleLogin.login($scope.login.email, $scope.login.pass)
       .then(function(/* user */) {
         window.location.href = '#/app/home';
         window.location.reload();
@@ -74,14 +75,26 @@ angular.module('starter.controllers', ['firebase.utils'])
       });
   };
 
+  $scope.createAccount = function() {
+    $scope.err = null;
+    if( assertValidAccountProps() ) {
+      simpleLogin.createAccount($scope.login.email, $scope.login.pass)
+        .then(function(/* user */) {
+          $location.path('#/app/home');
+        }, function(err) {
+          $scope.err = errMessage(err);
+        });
+    }
+  };
+
   function assertValidAccountProps() {
-    if( !$scope.email ) {
+    if( !$scope.login.email ) {
       $scope.err = 'Please enter an email address';
     }
-    else if( !$scope.pass || !$scope.confirm ) {
+    else if( !$scope.login.pass || !$scope.login.confirm ) {
       $scope.err = 'Please enter a password';
     }
-    else if( $scope.createMode && $scope.pass !== $scope.confirm ) {
+    else if( $scope.createMode && $scope.login.pass !== $scope.login.confirm ) {
       $scope.err = 'Passwords do not match';
     }
     return !$scope.err;
