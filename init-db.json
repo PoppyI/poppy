@@ -1,0 +1,170 @@
+{
+  "products": {
+    "strain1": {
+      "title": "OG Kush",
+      "price": 12.50,
+      "tested": true,
+      "indica": 80,
+      "sativa": 20,
+      "ruderalis": 0,
+      "thc_percentage": 25,
+      "image_title": "og_kush.jpg",
+      "description": "OG Kush or ‘Original Gangster’ as it’s known in some circles is an extremely potent Indica marijuana strain that comes from the San Fernando Valley in Southern California. The smoke is what makes OG Kush a connoisseur’s choice. The first hit is an earthy, musty flavor with an aftertaste of lemon. Be warned, the instant kick delivered can catch even the hardiest of smokers off guard. Euphoric effects are to be expected with some visuals and a high that lasts anything up to three hours."
+    },
+    "strain2": {
+      "title": "Power Diesel",
+      "price": 8.00,
+      "tested": true,
+      "indica": 100,
+      "sativa": 0,
+      "ruderalis": 0,
+      "thc_percentage": 16,
+      "image_title": "power_diesel.jpg",
+      "description": "Power Diesel is a highly popular strain in Amsterdam, the unofficial world capital of cannabis smoking, so that tells you quite a lot about its pedigree and quality. This Indica-dominant weed is a hybrid of an Afghani Indica strain and the legendary Skunk #1, which many modern skunk-type strains are at least partly based on."
+    },
+    "strain3": {
+      "title": "Auto Berry",
+      "price": 6.00,
+      "tested": true,
+      "indica": 50,
+      "sativa": 50,
+      "ruderalis": 33.33,
+      "thc_percentage": 12,
+      "image_title": "auto_berry.jpg",
+      "description": "Auto Berry is a cross between the Lowryder, Grapefruit and Blueberry strains bringing genetics from the Indica, Sativa and Ruderalis types into the mix. When you smoke this weed you’ll experience a pleasantly moderate kind of high, combining the body stone characteristics of Indica with the mental buzz and energy of Sativa. Auto Berry weed has a distinctive fruit and berry flavor and a sweet aroma with skunk tones. Medically, it’s used to help with insomnia and to increase appetite."
+    },
+    "strain5": {
+      "title": "Granddaddy Purple",
+      "price": 9.00,
+      "tested": true,
+      "indica": 100,
+      "sativa": 0,
+      "ruderalis": 0,
+      "thc_percentage": 18,
+      "image_title": "granddaddy_purple.jpg",
+      "description": "Granddaddy Purple is a product of the thriving Northern California medical cannabis scene. The Granddaddy purple strain has a distinctive fruity smell and when smoked tastes of sweet grapes. Despite its Indica heritage, this weed offers much more than a heavy body stone. It gives an energetic high, one which will make you feel like going out for a stroll rather than curling up on the sofa. Medicinally, it’s good for mild pain relief and poor appetite."
+    },
+    "strain6": {
+      "title": "Blue Dream",
+      "price": 10.00,
+      "tested": true,
+      "indica": 20,
+      "sativa": 80,
+      "ruderalis": 0,
+      "thc_percentage": 20,
+      "image_title": "blue_dream.jpg",
+      "description": "The Sativa dominant Blue Dream strain is the result of breeding the Blueberry and Super Silver Haze strains, both multiple prizewinners. Blue Dream weed has a skunky aroma with a suggestion of berries and fruit and the flavor continues the fruit theme with the addition of spicy tones. The hit starts off with a quick cerebral rush, which gradually gives way to a relaxing body stone lasting from two to three hours. This strain is good for treating mild pain, stress and insomnia."
+    }
+  },
+  "breakdown": {
+    "strain1": {
+      "thc_total": 25,
+      "thc": 0.25,
+      "thca": 24.75,
+      "cbd_total": 0.50,
+      "cbd": 0,
+      "cbda": 0.50,
+      "cbn_total": 0.30
+    },
+    "strain2": {
+      "thc_total": 16,
+      "thc": 0.16,
+      "thca": 15.84,
+      "cbd_total": 0.32,
+      "cbd": 0,
+      "cbda": 0.32,
+      "cbn_total": 0.20
+    },
+    "strain3": {
+      "thc_total": 12,
+      "thc": 0.12,
+      "thca": 11.88,
+      "cbd_total": 0.24,
+      "cbd": 0,
+      "cbda": 0.24,
+      "cbn_total": 0.10
+    },
+    "strain5": {
+      "thc_total": 18,
+      "thc": 0.18,
+      "thca": 17.82,
+      "cbd_total": 0.36,
+      "cbd": 0,
+      "cbda": 0.36,
+      "cbn_total": 0.20
+    },
+    "strain6": {
+      "thc_total": 20,
+      "thc": 0.20,
+      "thca": 19.80,
+      "cbd_total": 0.40,
+      "cbd": 0,
+      "cbda": 0.40,
+      "cbn_total": 0.20
+    }
+  },
+  "featured": {
+    "strain": {
+      "strain2": {
+        "title": "Power Diesel",
+        "price": 8.00,
+        "tested": true,
+        "indica": 100,
+        "sativa": 0,
+        "ruderalis": 0,
+        "thc_percentage": 16,
+        "image_title": "power_diesel.jpg",
+        "description": "Power Diesel is a highly popular strain in Amsterdam, the unofficial world capital of cannabis smoking, so that tells you quite a lot about its pedigree and quality. This Indica-dominant weed is a hybrid of an Afghani Indica strain and the legendary Skunk #1, which many modern skunk-type strains are at least partly based on."
+      }
+    },
+    "grower": {
+      "grower1": {
+        "name": "Gatson Growers",
+        "tested": true,
+        "image_title": "saeed_logo.jpg",
+        "location": "North Bay Area",
+        "rate": 4.5,
+        "description": "We're a small farm dedicated to mid-volume high-quality, high-consistency product. Our focus is on Stiva-high strains, with beneficial results for those suffering from Cancer, Arthritis, and severe Migranes. We are 100% ethical.",
+        "featured": "strain6"
+      }
+    }
+  },
+  "growers": {
+    "grower1": {
+      "name": "Gatson Growers",
+      "tested": true,
+      "image_title": "saeed_logo.jpg",
+      "location": "North Bay Area",
+      "rate": 4.5,
+      "description": "We're a small farm dedicated to mid-volume high-quality, high-consistency product. Our focus is on Stiva-high strains, with beneficial results for those suffering from Cancer, Arthritis, and severe Migranes. We are 100% ethical.",
+      "featured": "strain6"
+    }
+  },
+  "users": {
+    "simplelogin:1": {
+      "about": "Before medicinals I was living with a lot of pain, but thanks to the product I find on Poppy I can lead a near-normal existence. I can be a husband to my wife, a father to my daughter, and can make a living again.",
+      "fname": "Saeed",
+      "lname": "Gatson",
+      "location": "North Bay Area",
+      "zip": "94105",
+      "orders": {
+        "order01" : {
+          "title": "Power Diesel",
+          "product_id": "strain2",
+          "total_cost": 32.00,
+          "grams": 4,
+          "timestamp": 1420911640958,
+          "status": "recieved"
+        },
+        "order02" : {
+          "title": "Granddaddy Purple",
+          "product_id": "strain4",
+          "total_cost": 54.00,
+          "grams": 6,
+          "timestamp": 1420991119837,
+          "status": "recieved"
+        }
+      }
+    }
+  }
+}
