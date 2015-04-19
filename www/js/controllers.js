@@ -1,10 +1,12 @@
 angular.module('starter.controllers', ['firebase.utils'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, simpleLogin, $location) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $location, fbutil, simpleLogin) {
   //used so that user who aren't logged in are sent back to loggin page.
   if(simpleLogin.getUID() == false) {
     $location.path('/login');
   }
+
+  $scope.user = fbutil.syncObject('users/' + simpleLogin.getUID());
 
   //expose logout function to scope
   $scope.logout = function() {
@@ -13,7 +15,7 @@ angular.module('starter.controllers', ['firebase.utils'])
   };
 })
 
-.controller('HomeCtrl', ['$scope', 'fbutil', 'FBURL', function($scope, fbutil, FBURL) {
+.controller('HomeCtrl', ['$scope', 'fbutil', function($scope, fbutil) {
   $scope.products = fbutil.syncArray('products', {limit: 2, endAt: null});
   $scope.feat_strains = fbutil.syncArray('featured/strain');
   $scope.feat_growers = fbutil.syncArray('featured/grower');
@@ -53,13 +55,12 @@ angular.module('starter.controllers', ['firebase.utils'])
   }
 })
 
-.controller('PurchaseHistoryCtrl', function($scope, fbutil, simpleLogin) {
+.controller('PurchaseHistoryCtrl', function($scope, fbutil, simpleLogin, Orders) {
   var uid = simpleLogin.getUID();
-  console.log(uid);
-  $scope.orders = fbutil.syncArray('users/' + uid + '/orders');
+  $scope.orders = Orders.get(uid);
 })
 
-.controller('LoginCtrl', ['$scope', 'simpleLogin', '$location', function($scope, simpleLogin, $location) {
+.controller('LoginCtrl', ['$scope', 'simpleLogin', '$location', 'fbutil', function($scope, simpleLogin, $location, fbutil) {
 
   $scope.login = {email: null, password: null, confirm: null};
   $scope.createMode = false;
@@ -68,8 +69,9 @@ angular.module('starter.controllers', ['firebase.utils'])
     $scope.err = null;
     simpleLogin.login($scope.login.email, $scope.login.pass)
       .then(function(/* user */) {
-        window.location.href = '#/app/home';
-        window.location.reload();
+        routeTo();
+        // window.location.href = '#/app/home';
+        // window.location.reload();
       }, function(err) {
         $scope.err = errMessage(err);
       });
@@ -102,5 +104,14 @@ angular.module('starter.controllers', ['firebase.utils'])
 
   function errMessage(err) {
     return angular.isObject(err) && err.code? err.code : err + '';
+  }
+
+  function routeTo() {
+    var user = fbutil.syncArray('users/simplelogin:1');
+    if(user.type == 'cultivator') {
+      window.location.href = '#/app/browse';
+    } else {
+      window.location.href = '#/app/home';
+    }
   }
 }]);

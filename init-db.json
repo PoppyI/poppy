@@ -143,28 +143,49 @@
   "users": {
     "simplelogin:1": {
       "about": "Before medicinals I was living with a lot of pain, but thanks to the product I find on Poppy I can lead a near-normal existence. I can be a husband to my wife, a father to my daughter, and can make a living again.",
-      "fname": "Saeed",
-      "lname": "Gatson",
+      "fname": "Peter",
+      "lname": "Parker",
       "location": "North Bay Area",
       "zip": "94105",
+      "type": "producer",
       "orders": {
-        "order01" : {
-          "title": "Power Diesel",
-          "product_id": "strain2",
-          "total_cost": 32.00,
-          "grams": 4,
-          "timestamp": 1420911640958,
-          "status": "recieved"
-        },
-        "order02" : {
-          "title": "Granddaddy Purple",
-          "product_id": "strain4",
-          "total_cost": 54.00,
-          "grams": 6,
-          "timestamp": 1420991119837,
-          "status": "recieved"
-        }
+        "order01" : true,
+        "order02" : true
       }
+    },
+    "simplelogin:2": {
+      "about": "I'm Batman!!",
+      "fname": "Bruce",
+      "lname": "Wayne",
+      "location": "North Bay Area",
+      "zip": "94105",
+      "type": "customer",
+      "orders": {
+        "order01" : true,
+        "order02" : true
+      }
+    }
+  },
+  "orders": {
+    "order01" : {
+      "title": "Power Diesel",
+      "product_id": "strain2",
+      "total_cost": 32.00,
+      "grams": 4,
+      "timestamp": 1420911640958,
+      "status": "recieved",
+      "customer": "simplelogin:2",
+      "producer": "simplelogin:1"
+    },
+    "order02" : {
+      "title": "Granddaddy Purple",
+      "product_id": "strain4",
+      "total_cost": 54.00,
+      "grams": 6,
+      "timestamp": 1420991119837,
+      "status": "recieved",
+      "customer": "simplelogin:2",
+      "producer": "simplelogin:1"
     }
   }
 }

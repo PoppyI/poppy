@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin'])
+angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
