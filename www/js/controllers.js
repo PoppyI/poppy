@@ -60,6 +60,10 @@ angular.module('starter.controllers', ['firebase.utils'])
   $scope.orders = Orders.get(uid);
 })
 
+.controller('CustomerOrdersCtrl', function($scope, fbutil, simpleLogin, Orders) {
+  $scope.orders = fbutil.syncArray('orders');
+})
+
 .controller('LoginCtrl', ['$scope', 'simpleLogin', '$location', 'fbutil', function($scope, simpleLogin, $location, fbutil) {
 
   $scope.login = {email: null, password: null, confirm: null};

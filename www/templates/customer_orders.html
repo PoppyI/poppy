@@ -1,0 +1,12 @@
+<ion-view view-title="Order Request">
+  <ion-content>
+    <div class="list card">
+      <ion-item ng-repeat="order in orders | orderBy : '-timestamp'">
+        <h2>Status - {{order.status}}</h2>
+        <h2>{{order.grams}} grams of {{order.title}}</h2>
+        <h3>Total Cost - {{order.total_cost | currency}}</h3>
+        <p>Ordered - {{order.timestamp | date: 'medium'}}</p>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

@@ -99,6 +99,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'simpleLogin', 'start
     }
   })
 
+  .state('app.customer_orders', {
+    url: "/customer_orders",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/customer_orders.html",
+        controller: 'CustomerOrdersCtrl'
+      }
+    }
+  })
+
   .state('app.grower_detail', {
     url: "/grower_detail/:growerId",
     views: {

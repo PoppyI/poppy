@@ -27,8 +27,11 @@
         <ion-item nav-clear menu-close href="#/app/patient_profile">
           Profile
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/purchase_history">
+        <ion-item ng-if='user.type != "producer"' nav-clear menu-close href="#/app/purchase_history">
           Purchase History
+        </ion-item>
+        <ion-item ng-if='user.type == "producer"' nav-clear menu-close href="#/app/customer_orders">
+          Order Request
         </ion-item>
         <ion-item nav-clear menu-close ng-click="logout()">
           Logout
