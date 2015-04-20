@@ -41,16 +41,19 @@ angular.module('starter.controllers', ['firebase.utils'])
   $scope.patient = fbutil.syncObject('users/' + patientId);
 })
 
-.controller('PurchaseConfirmedCtrl', function($scope, $stateParams, fbutil, simpleLogin) {
+.controller('PurchaseConfirmedCtrl', function($scope, $stateParams, fbutil, simpleLogin, Orders) {
   $scope.product = fbutil.syncObject('products/' + $stateParams.productId);
   $scope.purchase_grams = $stateParams.grams;
   $scope.total_cost = $stateParams.total;
 
   var uid = simpleLogin.getUID();
-  $scope.orderList = fbutil.syncArray('users/' + uid + '/orders', {limit: 10, endAt: null});
+  $scope.orderList = fbutil.syncArray('/orders');
   console.log($scope.orderList);
   $scope.addOrder = function() {
-    $scope.orderList.$add({title: $scope.product.title, product_id: $scope.product.$id, total_cost: $scope.total_cost, grams: $scope.purchase_grams, timestamp: Firebase.ServerValue.TIMESTAMP, status: "processing"});
+    var orderId = Orders.add($scope.product.title, $scope.product.$id, $scope.total_cost, $scope.purchase_grams, uid, "simplelogin:1");
+    Orders.set(uid, orderId);
+    Orders.set("simplelogin:1", orderId);
+
     window.location.href = '#/app/home';
     window.location.reload();
   }
