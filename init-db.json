@@ -168,22 +168,24 @@
   },
   "orders": {
     "order01" : {
+      "id": "order01",
       "title": "Power Diesel",
       "product_id": "strain2",
       "total_cost": 32.00,
       "grams": 4,
       "timestamp": 1420911640958,
-      "status": "recieved",
+      "status": "received",
       "customer": "simplelogin:2",
       "producer": "simplelogin:1"
     },
     "order02" : {
+      "id": "order02",
       "title": "Granddaddy Purple",
       "product_id": "strain4",
       "total_cost": 54.00,
       "grams": 6,
       "timestamp": 1420991119837,
-      "status": "recieved",
+      "status": "received",
       "customer": "simplelogin:2",
       "producer": "simplelogin:1"
     }

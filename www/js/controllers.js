@@ -58,6 +58,12 @@ angular.module('starter.controllers', ['firebase.utils'])
 .controller('PurchaseHistoryCtrl', function($scope, fbutil, simpleLogin, Orders) {
   var uid = simpleLogin.getUID();
   $scope.orders = Orders.get(uid);
+  $scope.updateStatus = function(id) {
+    var order = fbutil.syncObject('orders/'+id+'/status');
+    order.$value = "received";
+    order.$save();
+    window.location.reload();
+  }
 })
 
 .controller('CustomerOrdersCtrl', function($scope, fbutil, simpleLogin, Orders) {

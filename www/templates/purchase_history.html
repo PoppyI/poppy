@@ -2,9 +2,11 @@
   <ion-content>
     <div class="list card">
       <ion-item ng-repeat="order in orders | orderBy : '-timestamp'">
+        <h2 ngShow="order.status ='received'">Status - {{order.status}}</h2>
         <h2>{{order.grams}} grams of {{order.title}}</h2>
         <h3>Total Cost - {{order.total_cost | currency}}</h3>
         <p>Ordered - {{order.timestamp | date: 'medium'}}</p>
+        <button ng-disabled="order.status == 'received'" class="button button-small button-balanced" ng-click="updateStatus(order.id)"> Product Received </button>
       </ion-item>
     </div>
   </ion-content>
