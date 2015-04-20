@@ -11,6 +11,7 @@ angular.module('starter.controllers', ['firebase.utils'])
   //expose logout function to scope
   $scope.logout = function() {
     simpleLogin.logout();
+    $scope.user = null;
     $location.path('/login');
   };
 })
@@ -68,6 +69,14 @@ angular.module('starter.controllers', ['firebase.utils'])
 
 .controller('CustomerOrdersCtrl', function($scope, fbutil, simpleLogin, Orders) {
   $scope.orders = fbutil.syncArray('orders');
+
+  $scope.updateStatus = function(id, status) {
+    console.log(status);
+    var order = fbutil.syncObject('orders/'+id+'/status');
+    order.$value = status;
+    order.$save();
+    window.location.reload();
+  }
 })
 
 .controller('LoginCtrl', ['$scope', 'simpleLogin', '$location', 'fbutil', function($scope, simpleLogin, $location, fbutil) {

@@ -6,6 +6,14 @@
         <h2>{{order.grams}} grams of {{order.title}}</h2>
         <h3>Total Cost - {{order.total_cost | currency}}</h3>
         <p>Ordered - {{order.timestamp | date: 'medium'}}</p>
+        <select ng-model="selected">
+          <option>requested</option>
+          <option>confirmed</option>
+          <option>gathering</option>
+          <option>in route</option>
+          <option>delivered</option>
+        </select>
+        <button class="button button-small button-balanced" ng-click="updateStatus(order.id, selected)"> Update Status </button>
       </ion-item>
     </div>
   </ion-content>
